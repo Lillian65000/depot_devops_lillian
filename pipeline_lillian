@@ -1,28 +1,87 @@
 pipeline {
-    /* je suis un commentaire */
     agent any
 
+parameters {
+string(name: 'NAME', description: 'Please tell me your name')
+choice(name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose Gender')
+}
+
     stages {
-        stage('HELLO') {
+	
+	    stage('Accréditation') {
+			steps {
+				script {
+					def name = "${params.NAME}"
+					def gender = "${params.GENDER}"
+					if(gender == "Male") {
+					echo "Mr. $name"
+							}
+					else {
+					echo "Mrs. $name"
+					}
+				}
+			}
+		}
+
+        // Epic: lancement - mars 2050
+        stage('Mettre à jour la plage de dates') {
             steps {
-                echo 'Hello World'
+                // DEV Story: mettre à jour la plage de dates pour inclure les dates du lancement de mars 2050.
+                echo 'DEV Mise à jour de la plage de dates pour inclure les dates du lancement de mars 2050'
             }
         }
-        stage('BUILD') {
+        
+        stage('Réduire le temps de chargement des listes de vols') {
             steps {
-                echo 'Developpement'
+                // DEV Story: réduire le temps de chargement des listes de vols demandées à < 0,45 seconde
+                echo 'DEV Réduction du temps de chargement des listes de vols demandées à < 0,45 seconde'
+                // Add actual build steps here, e.g., sh 'mvn clean package'
             }
         }
-        stage('Test') {
+        
+        stage('Promouvoir les soldes d\'été pour Saturne') {
             steps {
-                echo 'Testing'
+                // DEV Story: promouvoir les soldes d'été pour Saturne sur la page de confirmation des réservations en première classe.
+                echo 'DEV Promotion des soldes d\'été pour Saturne sur la page de confirmation des réservations en première classe'
+                // Add actual test steps here, e.g., sh 'mvn test'
             }
         }
-        stage('DEPLOY') {
+        
+        
+        stage('Maintenir la concentration des réservoirs de carburant') {
             steps {
-                echo 'Mise en Production'
+                // Story: maintenir la concentration des réservoirs de carburant à plus de 250 PPM au lancement
+                echo 'PROP Maintien de la concentration des réservoirs de carburant à plus de 250 PPM au lancement'
+                // Add steps to ensure fuel concentration is maintained
+            }
+        }
+        
+        stage('Réduire la consommation de carburant') {
+            steps {
+                // Story: réduire la consommation globale de carburant de 1 %.
+                echo 'PROP Réduction de la consommation globale de carburant de 1 %'
+                // Add steps to reduce fuel consumption
+            }
+        }
+        
+        stage('Embaucher un nouvel ingénieur en propulsion') {
+            steps {
+                // Story: embaucher un nouvel ingénieur en propulsion pour remplacer Gary. #garygate2050
+                echo 'PROP Embauche d\'un nouvel ingénieur en propulsion pour remplacer Gary. #garygate2050'
+                // Add steps related to hiring process
             }
         }
     }
-}
 
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+        success {
+            echo 'Pipeline succeeded.'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
