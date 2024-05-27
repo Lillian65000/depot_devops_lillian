@@ -8,7 +8,7 @@ choice(name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose Gender'
 
     stages {
 	
-	    stage('Accréditation') {
+	    stage('Accreditation') {
 			steps {
 				script {
 					def name = "${params.NAME}"
