@@ -2,7 +2,7 @@ pipeline {
     agent any
 
 //    environment {
-//        GIT_CREDENTIALS = credentials('github-credentials-id') // Replace with your credential ID
+//        GIT_CREDENTIALS = credentials('github-credentials-id')
 //    }
 
     stages {
@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // Story: mettre à jour la plage de dates pour inclure les dates du lancement de mars 2050.
                 echo 'Mise à jour de la plage de dates pour inclure les dates du lancement de mars 2050'
-//                git branch: 'main', url: 'https://github.com/your-repo/your-project.git', credentialsId: "${GIT_CREDENTIALS}"
+//                git branch: 'agile', url: 'https://github.com/your-repo/your-project.git', credentialsId: "${GIT_CREDENTIALS}"
             }
         }
         
@@ -19,7 +19,6 @@ pipeline {
             steps {
                 // Story: réduire le temps de chargement des listes de vols demandées à < 0,45 seconde
                 echo 'Réduction du temps de chargement des listes de vols demandées à < 0,45 seconde'
-                // Add actual build steps here, e.g., sh 'mvn clean package'
             }
         }
         
@@ -27,7 +26,6 @@ pipeline {
             steps {
                 // Story: promouvoir les soldes d'été pour Saturne sur la page de confirmation des réservations en première classe.
                 echo 'Promotion des soldes d\'été pour Saturne sur la page de confirmation des réservations en première classe'
-                // Add actual test steps here, e.g., sh 'mvn test'
             }
         }
         
@@ -37,7 +35,6 @@ pipeline {
             steps {
                 // Story: maintenir la concentration des réservoirs de carburant à plus de 250 PPM au lancement
                 echo 'Maintien de la concentration des réservoirs de carburant à plus de 250 PPM au lancement'
-                // Add steps to ensure fuel concentration is maintained
             }
         }
         
@@ -45,7 +42,6 @@ pipeline {
             steps {
                 // Story: réduire la consommation globale de carburant de 1 %.
                 echo 'Réduction de la consommation globale de carburant de 1 %'
-                // Add steps to reduce fuel consumption
             }
         }
         
@@ -53,7 +49,6 @@ pipeline {
             steps {
                 // Story: embaucher un nouvel ingénieur en propulsion pour remplacer Gary. #garygate2050
                 echo 'Embauche d\'un nouvel ingénieur en propulsion pour remplacer Gary. #garygate2050'
-                // Add steps related to hiring process
             }
         }
     }
